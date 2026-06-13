@@ -96,5 +96,8 @@ npm run dev
 
 ---
 
+## ✍️ Author
+Developed and maintained by **P Girish Varma** — [GitHub Profile](https://github.com/girish50)
+
 ## 📄 License
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
