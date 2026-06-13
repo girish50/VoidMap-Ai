@@ -3,8 +3,8 @@
 VoidMap AI is an intelligent, full-stack architectural auditing platform that identifies **missing engineering requirements (blueprint voids)** in technical proposals, stress-tests designs under adversarial simulation sandboxes, and maps failure domino effects before a single line of production code is written.
 
 ### 🌐 Live Deployment Links
-* **Frontend Web Application (Vercel):** [Deploying soon - Click here to configure](https://voidmap-ai.vercel.app)
-* **Backend API Engine (Hugging Face Spaces):** [Deploying soon - Click here to configure](https://huggingface.co/spaces)
+* **Frontend Web Application (Vercel):** [Live Demo](https://voidmap-ai.vercel.app)
+* **Backend API Engine (Render):** [Live API Endpoint](https://voidmap-backend.onrender.com)
 
 ---
 
