@@ -1,0 +1,1 @@
+We are proposing a medical imaging archive and consultation portal. The system allows hospital personnel to upload diagnostic imagery and view standard annotations. Patient privacy is protected using basic HTTPS transport layers. We have not started clinical trials, demographic bias audits, or FDA/CE regulatory filing pathways.

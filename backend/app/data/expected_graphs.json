@@ -1,0 +1,226 @@
+{
+  "Healthcare": [
+    {
+      "requirement": "Clinical Validation",
+      "category": "Compliance",
+      "description": "Rigorous clinical trials or validation against gold-standard manual diagnostic reviews.",
+      "risk": "Inaccurate predictions resulting in patient harm, misdiagnosis liability, and regulatory rejection.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Demographic Bias Mitigation",
+      "category": "Ethics",
+      "description": "Evaluation of model accuracy across diverse ages, genders, ethnicities, and socio-economic groups.",
+      "risk": "Systemic bias resulting in unequal care quality and civil rights compliance breaches.",
+      "dependencies": ["Clinical Validation"]
+    },
+    {
+      "requirement": "FDA / CE Regulatory Pathway",
+      "category": "Legal",
+      "description": "Regulatory filings, audits, and approvals for software as a medical device (SaMD).",
+      "risk": "Illegal distribution charges, heavy fines, and immediate system cease-and-desist orders.",
+      "dependencies": ["Clinical Validation"]
+    },
+    {
+      "requirement": "Clinical Drift Monitoring",
+      "category": "Operations",
+      "description": "Continuous monitoring of image scanner calibrations, sensor drifts, and shifting patient population profiles.",
+      "risk": "Silent degradation of diagnostic accuracy in production without developer awareness.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Explainability & Interpretability",
+      "category": "Product",
+      "description": "SHAP/LIME or attention heatmaps explaining AI predictions for radiologist auditability.",
+      "risk": "Blind trust or complete clinician rejection due to lack of diagnostic reasoning.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Patient Privacy & HIPAA",
+      "category": "Security",
+      "description": "Full end-to-end data encryption, audit logs, and patient identity sanitization (de-identification).",
+      "risk": "HIPAA compliance breaches, massive legal class actions, and leakage of highly sensitive health records.",
+      "dependencies": []
+    }
+  ],
+  "Cybersecurity": [
+    {
+      "requirement": "Threat Modeling",
+      "category": "Security",
+      "description": "Formal STRIDE/PASTA assessment of trust boundaries, system entry points, and adversarial paths.",
+      "risk": "Unexplored architectural entry points that permit unauthorized administrative escalation.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Key Lifecycle Management",
+      "category": "Security",
+      "description": "Automatic key rotation, secure hardware storage (HSM), and zero hard-coded credentials.",
+      "risk": "Compromised encryption keys resulting in complete plaintext exposure of database assets.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Insider Threat Auditing",
+      "category": "Operations",
+      "description": "Continuous logging and behavioral analytics of administrator actions and high-privilege operations.",
+      "risk": "Rogue administrators downloading data or sabotaging active production databases without logs.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Disaster Recovery Strategy",
+      "category": "Operations",
+      "description": "Multi-region database backups, cold/warm recovery sites, and strict RTO/RPO metrics.",
+      "risk": "Permanent data destruction and multi-day outages following a catastrophic cloud failure.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Adversarial Robustness Testing",
+      "category": "Product",
+      "description": "Stress-testing classifiers against perturbed samples, evasion attacks, and backdoor poisoning.",
+      "risk": "Trivial system bypasses via minor input manipulations designed by hackers.",
+      "dependencies": ["Threat Modeling"]
+    }
+  ],
+  "Startup": [
+    {
+      "requirement": "Regulatory Compliance Analysis",
+      "category": "Legal",
+      "description": "Assessment of data laws, local operations regulations, and licensing requirements.",
+      "risk": "Sudden legal shut-downs, retroactive fines, and licensing invalidation.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Customer Acquisition Cost Audit",
+      "category": "Finance",
+      "description": "Granular modeling of conversion rates, marketing costs, and customer churn metrics.",
+      "risk": "Unsustainable cash burn rates causing insolvency before reaching product-market fit.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Infrastructure Scaling Model",
+      "category": "Operations",
+      "description": "Calculations of infrastructure and server cost increases as the active user base grows.",
+      "risk": "Negative unit economics where scaling user base increases losses exponentially.",
+      "dependencies": []
+    },
+    {
+      "requirement": "IP and Patent Strategy",
+      "category": "Legal",
+      "description": "Patent searches, filing of core innovations, and defense of proprietary algorithms.",
+      "risk": "Competitors legally cloning core architecture or suing for proprietary infringement.",
+      "dependencies": []
+    },
+    {
+      "requirement": "User Offboarding & Data Deletion",
+      "category": "Product",
+      "description": "Clean, automated protocols for account purging and data export to respect user autonomy.",
+      "risk": "GDPR compliance failures and retention of costly, liability-heavy orphan data.",
+      "dependencies": []
+    }
+  ],
+  "Research": [
+    {
+      "requirement": "Negative Control Groups",
+      "category": "Ethics",
+      "description": "Active control designs to verify that observed effects are caused exclusively by active variables.",
+      "risk": "False positive discoveries and correlations that dissolve under scientific replication.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Reproducibility Roadmap",
+      "category": "Compliance",
+      "description": "Open-sourcing code, datasets, Docker environments, and random seeding parameters.",
+      "risk": "Immediate peer-review rejection, skepticism, and lack of community contribution.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Ablation Studies",
+      "category": "Product",
+      "description": "Systematic removal of features/components to isolate the true driver of marginal gains.",
+      "risk": "Over-engineered systems where 90% of complexity yields 0% of actual accuracy improvements.",
+      "dependencies": ["Negative Control Groups"]
+    },
+    {
+      "requirement": "Limitations and Scope Disclosure",
+      "category": "Legal",
+      "description": "Explicit declarations of domain boundaries, data constraints, and failure modes.",
+      "risk": "Rejection due to over-claiming system capabilities beyond true scientific limits.",
+      "dependencies": []
+    }
+  ],
+  "Engineering": [
+    {
+      "requirement": "Load Testing & Scalability",
+      "category": "Operations",
+      "description": "Rigorous simulation of peak concurrent request rates and hardware bottleneck discovery.",
+      "risk": "Complete system collapse or infinite timeouts during high-traffic launch events.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Database Drift & Schema Migrations",
+      "category": "Operations",
+      "description": "Automated pipeline validation of relational changes and graph integrity checks.",
+      "risk": "Production database corruption, data truncation, and service locking during deployment updates.",
+      "dependencies": []
+    },
+    {
+      "requirement": "End-to-End Latency Profile",
+      "category": "Product",
+      "description": "Profiling response times across networking layers, logic handlers, and database queries.",
+      "risk": "Laggy UX driving user abandonment and high transactional cancellation rates.",
+      "dependencies": ["Load Testing & Scalability"]
+    },
+    {
+      "requirement": "Secrets and Credentials Shielding",
+      "category": "Security",
+      "description": "Enforcing zero plain-text configurations in repositories and using secure environment decoders.",
+      "risk": "Compromised cloud admin dashboards after developers push hardcoded API keys to public repos.",
+      "dependencies": []
+    }
+  ],
+  "Finance": [
+    {
+      "requirement": "Stress Testing under Market Shock",
+      "category": "Finance",
+      "description": "Simulating system resilience during black-swan events, extreme volatility, or massive liquidity drops.",
+      "risk": "Cascading liquidation triggers, default loops, and immediate financial insolvency.",
+      "dependencies": []
+    },
+    {
+      "requirement": "KYC / AML Regulatory Integration",
+      "category": "Compliance",
+      "description": "Enforcing mandatory verification, sanction-list scrubbing, and suspicious activity triggers.",
+      "risk": "Facilitating illicit transactions resulting in direct criminal liability and loss of operating licenses.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Audit Trail Logging",
+      "category": "Security",
+      "description": "Immutable ledger tracking of every state transition, financial query, and balance change.",
+      "risk": "Undetectable internal fraud and failure of financial audits by central banks.",
+      "dependencies": []
+    }
+  ],
+  "Policy": [
+    {
+      "requirement": "Equity Impact Assessment",
+      "category": "Ethics",
+      "description": "Evaluating the distributional impact of policy parameters across diverse social and economic brackets.",
+      "risk": "Unintentional widening of wealth gaps, institutional exclusion, and legal discrimination challenges.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Dynamic Feedback Loop Analysis",
+      "category": "Operations",
+      "description": "Modeling how system participants adapt and attempt to gamify rules over multi-year scales.",
+      "risk": "Unintended downstream adaptations that completely neutralize or reverse positive policy outcomes.",
+      "dependencies": []
+    },
+    {
+      "requirement": "Public Accountability Protocol",
+      "category": "Product",
+      "description": "Providing public access channels, open hearings, and transparent grievance filing procedures.",
+      "risk": "Widespread community distrust, protests, non-compliance, and total loss of governing legitimacy.",
+      "dependencies": []
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Theranos Diagnostic Meltdown",
+    "domain": "Healthcare",
+    "gaps": ["Clinical Validation", "FDA / CE Regulatory Pathway", "Explainability & Interpretability"],
+    "summary": "Exaggeration of blood testing automation capabilities without clinical validation. Circumvented FDA pathways and operated in complete diagnostic secrecy.",
+    "consequences": "Inaccurate results distributed to patients, massive fraud lawsuits, federal bans, and complete liquidation.",
+    "lesson": "AI diagnostics must undergo transparent, peer-reviewed clinical validation and strict regulatory reviews."
+  },
+  {
+    "name": "IBM Watson Health Oncology Failure",
+    "domain": "Healthcare",
+    "gaps": ["Demographic Bias Mitigation", "Explainability & Interpretability", "Clinical Drift Monitoring"],
+    "summary": "Watson Oncology was trained on small, synthetic cohorts from a single cancer center rather than real patient datasets. When deployed globally, it recommended dangerous and incorrect treatments due to data mismatches.",
+    "consequences": "Multi-million dollar hospital cancellations, reputational damage, and eventual sell-off of Watson assets.",
+    "lesson": "Machine learning systems must be validated against globally representative cohorts and audited continuously for clinical drift."
+  },
+  {
+    "name": "Knight Capital Automated Trading Collapse",
+    "domain": "Cybersecurity",
+    "gaps": ["Disaster Recovery Strategy", "Load Testing & Scalability", "Insider Threat Auditing"],
+    "summary": "A DevOps deployment error left dead code active on an automated trading server. Upon startup, the system entered an infinite loop buying high and selling low without an automated circuit breaker or disaster recovery protocol.",
+    "consequences": "$440 million lost in 45 minutes, stock collapse, and forced acquisition by a competitor.",
+    "lesson": "System deployment pipelines require load testing, rigorous secret shielding, and rapid multi-region recovery protocols."
+  },
+  {
+    "name": "SolarWinds Supply Chain Breach",
+    "domain": "Cybersecurity",
+    "gaps": ["Threat Modeling", "Key Lifecycle Management", "Insider Threat Auditing"],
+    "summary": "State-sponsored actors compromised SolarWinds' internal build pipeline and inserted malicious backdoors into updates distributed to 18,000 customers. Hardcoded passwords ('solarwinds123') and unrotated access tokens facilitated the breach.",
+    "consequences": "Widespread compromise of federal networks, severe reputation loss, and massive cybersecurity liability suits.",
+    "lesson": "Software builders must implement strict credential shielding, automated key rotation, and end-to-end threat modeling."
+  },
+  {
+    "name": "FTX Exchange Ledger Insolvency",
+    "domain": "Finance",
+    "gaps": ["Audit Trail Logging", "Stress Testing under Market Shock", "KYC / AML Regulatory Integration"],
+    "summary": "An offshore cryptocurrency exchange operated with an undocumented internal backdoor in its accounting database, allowing co-mingling of client funds with private trading arms. The system possessed no market shock stress testing protocols.",
+    "consequences": "Sudden customer run on assets, massive liquidity collapse, $8 billion bankruptcy, and criminal prosecution.",
+    "lesson": "Financial ledgers must maintain immutable audit trail logging, and undergo transparent stress tests under extreme volatility."
+  },
+  {
+    "name": "The DAO Reentrancy Smart Contract Hack",
+    "domain": "Finance",
+    "gaps": ["Threat Modeling", "Adversarial Robustness Testing", "Disaster Recovery Strategy"],
+    "summary": "An early decentralized organization pooled $150M. The smart contract code possessed a critical reentrancy bug in its withdrawal method. Attackers exploited this vector to recursively withdraw funds before updating the internal balance ledger.",
+    "consequences": "Loss of $50M in crypto assets, forced hard-fork of the Ethereum blockchain to recover funds, and community fracturing.",
+    "lesson": "Smart contracts and ledger layers must undergo formal threat modeling and adversarial robustness audits before deployment."
+  },
+  {
+    "name": "Australian Robodebt Automated Debt Scheme",
+    "domain": "Policy",
+    "gaps": ["Equity Impact Assessment", "Public Accountability Protocol", "Dynamic Feedback Loop Analysis"],
+    "summary": "An automated government algorithm matched tax records with social security databases to calculate alleged overpayments. The system used simplistic averaging heuristics, assuming all gaps represented intentional fraud, with no human validation or equity audit.",
+    "consequences": "Hundreds of thousands of false debts issued, widespread psychological harm, a $1.2 billion class-action settlement, and a royal commission.",
+    "lesson": "Public policy models must integrate formal equity audits and transparent public accountability channels."
+  }
+]

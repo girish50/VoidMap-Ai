@@ -1,0 +1,1 @@
+This architecture specification describes a cloud database ledger system. The system runs standard API microservices inside Docker containers. Administrative operations are performed via standard database accounts. We do not have automated credential lifecycle key rotation, threat modeling assessments, or disaster recovery strategies mapped.
