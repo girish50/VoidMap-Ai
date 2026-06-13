@@ -4,6 +4,34 @@ VoidMap AI is an intelligent, full-stack architectural auditing platform that id
 
 ### 🌐 Live Deployment Links
 * **Frontend Web Application (Vercel):** [Live Demo](https://voidmap-ai.vercel.app)
+* **Backend API & Interactive Swagger Documentation (Render):** [Interactive API Docs](https://voidmap-backend.onrender.com/docs)
+
+---
+
+## 🔌 How to Test the API (Interactive Guide)
+
+You can test the reasoning engine's auditing pipeline directly in your browser using the **Swagger UI** link above:
+
+1. Navigate to **[https://voidmap-backend.onrender.com/docs](https://voidmap-backend.onrender.com/docs)**.
+2. Click on the green **`POST /api/analyze`** bar to expand it.
+3. Click the **`Try it out`** button in the top-right corner.
+4. Copy and paste the following example JSON payload into the **Request body** text area:
+   ```json
+   {
+     "project_name": "AlphaMed CNN Classifier",
+     "domain": "Healthcare",
+     "project_type": "Medical AI",
+     "risk_level": "High",
+     "tech_stack": ["React", "FastAPI", "PyTorch"],
+     "considered_factors": ["Accuracy"],
+     "proposal_text": "We are building an AI app to classify chest X-ray scans. We store files on AWS S3."
+   }
+   ```
+5. Click the blue **`Execute`** button.
+6. Scroll down to the **Server response** section to view the calculated audit report:
+   * **`blindspot_score`:** The risk percentage (e.g. `88.0%` calculated from missing safeguards).
+   * **`missing_factors`:** Discovered blueprint voids (such as **Demographic Bias Mitigation** and **FDA / CE Regulatory Pathway**), their risk categories, and specific downstream hazards.
+   * **`consequence_tree`:** Node positions and edges mapping out the domino failure chain.
 
 ---
 
