@@ -4,7 +4,6 @@ VoidMap AI is an intelligent, full-stack architectural auditing platform that id
 
 ### 🌐 Live Deployment Links
 * **Frontend Web Application (Vercel):** [Live Demo](https://voidmap-ai.vercel.app)
-* **Backend API Engine (Render):** [Live API Endpoint](https://voidmap-backend.onrender.com)
 
 ---
 
