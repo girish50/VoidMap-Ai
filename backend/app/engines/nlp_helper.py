@@ -11,23 +11,30 @@ TRANSFORMER_MODEL = None
 SPACY_NLP = None
 NLP_FALLBACK_ACTIVE = False
 
-# Attempt to load Neural ML packages
-try:
-    from sentence_transformers import SentenceTransformer
-    import spacy
-    
-    logger.info("Attempting to load neural NLP models...")
-    # Load mini transformer (only ~80MB, fast on CPU)
-    TRANSFORMER_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
-    # Load spacy small model
-    SPACY_NLP = spacy.load("en_core_web_sm")
-    logger.info("Neural NLP (SentenceTransformers + spaCy) successfully loaded.")
-except Exception as e:
-    logger.warning(
-        f"Could not load heavy neural NLP packages ({e}). "
-        "Enabling high-fidelity local keyword and Jaccard TF-IDF fallbacks."
-    )
+from app.config import settings
+
+# Attempt to load Neural ML packages if not forced to run locally
+if settings.FORCE_LOCAL_FALLBACKS:
+    logger.info("FORCE_LOCAL_FALLBACKS is active. Skipping heavy neural ML model imports.")
     NLP_FALLBACK_ACTIVE = True
+else:
+    try:
+        from sentence_transformers import SentenceTransformer
+        import spacy
+        
+        logger.info("Attempting to load neural NLP models...")
+        # Load mini transformer (only ~80MB, fast on CPU)
+        TRANSFORMER_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
+        # Load spacy small model
+        SPACY_NLP = spacy.load("en_core_web_sm")
+        logger.info("Neural NLP (SentenceTransformers + spaCy) successfully loaded.")
+    except Exception as e:
+        logger.warning(
+            f"Could not load heavy neural NLP packages ({e}). "
+            "Enabling high-fidelity local keyword and Jaccard TF-IDF fallbacks."
+        )
+        NLP_FALLBACK_ACTIVE = True
+
 
 def clean_text(text: str) -> str:
     """
